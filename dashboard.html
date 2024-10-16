@@ -1,0 +1,28 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Survey Dashboard</h2>
+
+    <!-- Form for uploading Excel file -->
+    <form action="/dashboard" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Survey Data (Excel):</label>
+        <input type="file" id="file" name="file" accept=".xlsx">
+        <button type="submit">Upload</button>
+    </form>
+
+    <h3>Last updated: {{ last_updated }}</h3>
+
+    <!-- Chart for visualizing data -->
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script src="/static/js/charts.js"></script>
+</body>
+</html>
